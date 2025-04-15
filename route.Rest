@@ -1,6 +1,6 @@
 #Localhost | Running on port 3000
 ##Local Deployment
-##getAll Satff
+##getAll Staff
 GET http://localhost:8080/staff
 
 ###getAll Students
@@ -10,9 +10,9 @@ GET http://localhost:8080/students
 GET http://localhost:8080/staff/67fe593d2dec3040b109f782
 
 ### get student by id
-GET http://localhost:8080/students/67fe593d2dec3040b109f782
+GET http://localhost:8080/students/
 
-### Add employee info 
+### Add staff 
 POST http://localhost:8080/staff HTTP/1.1
 content-type: application/json
 

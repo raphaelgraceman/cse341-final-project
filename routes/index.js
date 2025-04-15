@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const staffRoute = require('./staff')
-const studentsRoute = require('./student')
+const staffRoute = require('./staff');
+const studentsRoute = require('./students');
 
 router.use('/', require('./swagger'));
 
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.use('/', require('./swagger'));
-//use route all staff information
+//use staff route
 router.use('/staff', staffRoute);
 
 //Returns Student information

@@ -2,7 +2,7 @@ const mongodb = require("../database/connect");
 const ObjectId = require("mongodb").ObjectId
 
 //getAll Student
-const getAllStudent = async(req, res) => {
+const getAllStudents = async(req, res) => {
      //#swagger tags =['staff']
     const result = await mongodb.getDatabase().db().collection("students").find();
     result.toArray().then((students) => {
@@ -22,7 +22,7 @@ const getStudentById = async(req, res) => {
     if (!result) {
       throw createError(404, 'Student does not exist');
     }
-    result.toArray().then((staff) => {
+    result.toArray().then((students) => {
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(students[0]);
     });
@@ -99,4 +99,4 @@ const deleteStudentById = async (req, res) => {
 };
 
 
-module.exports = {getAllStudent, getStudentById, addStudent, updateStudentById, deleteStudentById};
+module.exports = {getAllStudents, getStudentById, addStudent, updateStudentById, deleteStudentById};
