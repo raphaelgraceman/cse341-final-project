@@ -5,7 +5,7 @@
     "description": "CRUD PRACTICE API",
     "version": "1.0.0"
   },
-  "host": "cse341-final-project-85h6.onrender.com0",
+  "host": "cse341-final-project-85h6.onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
