@@ -10,4 +10,4 @@ const validateInput = (body, rules, customMessages, callback) => {
     }  
 };  
 
-module.exports = validateInput;   
+module.exports = validateInput;    

@@ -8,11 +8,11 @@ const addStudent = (req, res, next) => {
     "email": "required|email",
     "department": "required|string",
     "enrollmentDate": "required|date",
-    "completionYear": "",
-    "tuition": "required",
-    "club": "required",
+    "completionYear": "date",
+    "tuition": "required|string",
+    "club": "required|string",
     "function": "required|string",
-    "courses": "required"
+    "courses": "required|string"
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -35,11 +35,11 @@ const updateStudentInfo = (req, res, next) => {
     "email": "required|email",
     "department": "required|string",
     "enrollmentDate": "required|date",
-    "completionYear": "",
-    "tuition": "",
-    "club": "",
+    "completionYear": "date",
+    "tuition": "string",
+    "club": "string",
     "function": "required|string",
-    "courses": ""
+    "courses": "string"
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

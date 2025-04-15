@@ -8,11 +8,11 @@ const addStaffInfo = (req, res, next) => {
     "email": "required|email",
     "department": "required|string",
     "appointmentDate": "required|date",
-    "terminationDate": "",
+    "terminationDate": "date",
     "qualification": "required|string",
-    "salary": "",
+    "salary": "string",
     "function": "required|string",
-    "course": ""
+    "course": "string"
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -35,11 +35,11 @@ const updateStaffInfo = (req, res, next) => {
     "email": "required|email",
     "department": "required|string",
     "appointmentDate": "required|date",
-    "terminationDate": "",
+    "terminationDate": "date",
     "qualification": "required|string",
-    "salary": "",
+    "salary": "string",
     "function": "required|string",
-    "course": ""
+    "course": "string"
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
