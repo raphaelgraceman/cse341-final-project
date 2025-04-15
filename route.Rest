@@ -1,0 +1,193 @@
+#Localhost | Running on port 3000
+##Local Deployment
+##getAll Satff
+GET http://localhost:8080/satff
+
+###getAll Students
+GET http://localhost:8080/students      
+
+### getStaff by id
+GET http://localhost:8080/staff
+
+### getSingle expenses data by id
+GET http://localhost:8080/expenses/67e26707b7b42a4fd52c76e5
+
+### Add employee info 
+POST http://localhost:8080/staff HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Gifty",
+    "lastName": "Amoah",
+    "birthDay": "04/12/2014",
+    "email": "giftyamoah@gmail.com",
+    "department": "SHS",
+    "appointmentDate": "1/13/2025",
+    "terminationDate": "",
+    "qualification": "Degree",
+    "salary": "1500.00",
+    "function": "Administrator",
+    "course": ""
+}
+
+### Add Student
+POST http://localhost:8080/students HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Emmanuel",
+  "lastName": "Adjeiwaa",
+  "birthDay": "04/12/2017",
+  "email": "aemanuel@gmail.com",
+  "department": "SHS",
+  "enrollmentDate": "1/13/2025",
+  "completionYear": "2027",
+  "Tuition": "100.00",
+  "club": "Soccer",
+  "function": "Student",
+  "courses": "CoreMaths, Science, English, RME"
+}
+
+### Update Staff by id
+PUT http://localhost:8080/staff/ HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Gifty",
+  "lastName": "Amoah",
+  "birthDay": "04/12/2014",
+  "email": "giftyamoah@gmail.com",
+  "department": "SHS",
+  "appointmentDate": "1/13/2025",
+  "terminationDate": "",
+  "qualification": "Degree",
+  "salary": "1500.00",
+  "function": "Administrator",
+  "course": ""
+}
+
+### Update Student by id
+PUT http://localhost:8080/students/67e1519d7e6ca89b6791efa7 HTTP/1.1
+content-type: application/json
+
+{
+   "firstName": "Emmanuel",
+  "lastName": "Adjeiwaa",
+  "birthDay": "04/12/2017",
+  "email": "aemanuel@gmail.com",
+  "department": "SHS",
+  "enrollmentDate": "1/13/2025",
+  "completionYear": "2027",
+  "Tuition": "100.00",
+  "club": "Soccer",
+  "function": "Student",
+  "courses": "CoreMaths, Science, English, RME"
+}
+
+
+
+### DELETE Staff ById
+DELETE http://localhost:8080/staff/67f49b77a86a09bae533a45e HTTP/1.1
+
+### DELETE student by id
+DELETE http://localhost:8080/students/67f6d560bc89832cb24c770a HTTP/1.1
+
+
+
+
+
+
+// Render.com production Deployment
+### Get all Staff
+GET https://crud-practice-jtlg.onrender.com/staff
+
+
+### Get all expenses
+GET https://crud-practice-jtlg.onrender.com/students
+
+### Get employees by id
+GET https://crud-practice-jtlg.onrender.com/staff/67e263d4b7b42a4fd52c76e1
+
+
+### Get expenses by id
+GET https://crud-practice-jtlg.onrender.com/students/67e1519d7e6ca89b6791efa7
+
+
+### Add Staff
+POST https://crud-practice-jtlg.onrender.com/staff HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Gifty",
+  "lastName": "Amoah",
+  "birthDay": "04/12/2014",
+  "email": "giftyamoah@gmail.com",
+  "department": "SHS",
+  "appointmentDate": "1/13/2025",
+  "terminationDate": "",
+  "qualification": "Degree",
+  "salary": "1500.00",
+  "function": "Administrator",
+  "course": ""
+}
+
+
+### Add Student
+POST https://crud-practice-jtlg.onrender.com/students HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Emmanuel",
+  "lastName": "Adjeiwaa",
+  "birthDay": "04/12/2017",
+  "email": "aemanuel@gmail.com",
+  "department": "SHS",
+  "enrollmentDate": "1/13/2025",
+  "completionYear": "2027",
+  "Tuition": "100.00",
+  "club": "Soccer",
+  "function": "Student",
+  "courses": "CoreMaths, Science, English, RME"
+}
+
+### Update Staff
+PUT https://crud-practice-jtlg.onrender.com/staff/67f6dac756acfb4bd3e07124 HTTP/1.1
+content-type: application/json
+
+{
+  "firstName": "Gifty",
+  "lastName": "Amoah",
+  "birthDay": "04/12/2014",
+  "email": "giftyamoah@gmail.com",
+  "department": "SHS",
+  "appointmentDate": "1/13/2025",
+  "terminationDate": "",
+  "qualification": "Degree",
+  "salary": "1500.00",
+  "function": "Administrator",
+  "course": ""
+}
+
+### Update Students
+PUT https://crud-practice-jtlg.onrender.com/students/67e1519d7e6ca89b6791efa7 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Emmanuel",
+    "lastName": "Adjeiwaa",
+    "birthDay": "04/12/2017",
+    "email": "aemanuel@gmail.com",
+    "department": "SHS",
+    "enrollmentDate": "1/13/2025",
+    "completionYear": "2027",
+    "Tuition": "100.00",
+    "club": "Soccer",
+    "function": "Student",
+    "courses": "CoreMaths, Science, English, RME"
+}
+
+### DELETE Staff
+DELETE https://crud-practice-jtlg.onrender.com/staff/67f6dac756acfb4bd3e07124 HTTP/1.1
+
+### DELETE Students
+DELETE https://crud-practice-jtlg.onrender.com/students/67e1519d7e6ca89b6791efa7 HTTP/1.1
