@@ -5,7 +5,7 @@
     "description": "CRUD PRACTICE API",
     "version": "1.0.0"
   },
-  "host": "cse341-final-project-85h6.onrender.com",
+  "host": "cse341-final-project-85h6.onrender.com0",
   "basePath": "/",
   "schemes": [
     "https",
@@ -31,6 +31,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -113,6 +116,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -215,6 +221,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -242,22 +251,22 @@
                 "department": {
                   "example": "any"
                 },
-                "appointmentDate": {
+                "enrollmentDate": {
                   "example": "any"
                 },
-                "terminationDate": {
+                "completionYear": {
                   "example": "any"
                 },
-                "qualification": {
+                "tuition": {
                   "example": "any"
                 },
-                "salary": {
+                "club": {
                   "example": "any"
                 },
                 "function": {
                   "example": "any"
                 },
-                "course": {
+                "courses": {
                   "example": "any"
                 }
               }
@@ -297,6 +306,9 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -330,22 +342,22 @@
                 "department": {
                   "example": "any"
                 },
-                "appointmentDate": {
+                "enrollmentDate": {
                   "example": "any"
                 },
-                "terminationDate": {
+                "completionYear": {
                   "example": "any"
                 },
-                "qualification": {
+                "tuition": {
                   "example": "any"
                 },
-                "salary": {
+                "club": {
                   "example": "any"
                 },
                 "function": {
                   "example": "any"
                 },
-                "course": {
+                "courses": {
                   "example": "any"
                 }
               }

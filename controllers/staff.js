@@ -3,20 +3,26 @@ const ObjectId = require("mongodb").ObjectId
 
 //getAll Staff
 const getAllStaff = async(req, res) => {
-     //#swagger tags =['staff']
-    const result = await mongodb.getDatabase().db().collection("staff").find();
-    result.toArray().then((staff) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(staff);
-    });
+    //#swagger tags =['staff']
+  try{
+  const result = await mongodb.getDatabase().db().collection("staff").find();
+  result.toArray().then((staff) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(staff);
+  });
+  }catch (error){
+    console.error('Error retrieving staff data:', error);
+    res.status(500).json('An error occurred while retrieving staff info');
+  }
 };
 
 //getSingle staff by id
 const getStaffById = async(req, res) => {
-     //#swagger tags =['staff']
-    if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Must use a valid id.');
-    } 
+    //#swagger tags =['staff']
+  if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid id.');
+  } 
+  try{
     const staffId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection("staff").find({ _id: staffId});
     if (!result) {
@@ -26,6 +32,10 @@ const getStaffById = async(req, res) => {
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(staff[0]);
     });
+  }catch (error){
+    console.error('Error retrieving staff data:', error);
+    res.status(500).json('An error occurred while retrieving staff info');
+  }
 };
 
 //Add Staff Info
@@ -44,14 +54,18 @@ const addStaff = async (req, res) => {
         function: req.body.function,
         course: req.body.course
     };
+  try {
     const response = await mongodb.getDatabase().db().collection('staff').insertOne(staff);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
       res.status(500).json(response.error || 'Some error occurred while Adding staff.');
     }
+  } catch (error) {
+    console.error('Error adding staff info:', error);
+    res.status(500).json('An error occurred while adding staff info');
+  }
 };
-
 //Update staff Info
 const updateStaffById = async (req, res) => {
      //#swagger tags =['staff']
@@ -72,14 +86,19 @@ const updateStaffById = async (req, res) => {
         function: req.body.function,
         course: req.body.course
     };
+   try{
     const response = await mongodb
-      .getDatabase().db().collection('staff').replaceOne({ _id: staffId }, staff);
+    .getDatabase().db().collection('staff').replaceOne({ _id: staffId }, staff);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
     } else {
       res.status(500).json(response.error || 'Some error occurred while updating staff Info.');
     }
+  } catch (error) {
+    console.error('Error updating staff info:', error);
+    res.status(500).json('An error occurred while updating staff info');
+  }
 };
 
 //Delete delete staff Info
@@ -87,14 +106,19 @@ const deleteStaffById = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid id to delete staff.');
   }
-  const staffId = new ObjectId(req.params.id);
+  try {
+    const staffId = new ObjectId(req.params.id);
 
-  const response = await mongodb.getDatabase().db().collection('staff').deleteOne({ _id: staffId }, true);
-  console.log(response);
-  if (response.deletedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while deleting staff.');
+    const response = await mongodb.getDatabase().db().collection('staff').deleteOne({ _id: staffId }, true);
+    console.log(response);
+    if (response.deletedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(500).json(response.error || 'Some error occurred while deleting staff.');
+    }
+  } catch (error) {
+    console.error('Error deleting staff info:', error);
+    res.status(500).json('An error occurred while deleting staff info');
   }
 };
 
