@@ -5,7 +5,7 @@ const doc = {
     title: 'CRUD API',
     description: 'CRUD PRACTICE API'
   },
-  host: 'localhost:8080',
+  host: 'cse341-final-project-85h6.onrender.com0',
   schemes: ['https', 'http']
 };
 

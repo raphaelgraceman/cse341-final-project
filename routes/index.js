@@ -10,8 +10,6 @@ router.get("/", (req, res) => {
     //#swagger tags =['Hello Swagger]
     res.send("Hello")
 });
-
-router.use('/', require('./swagger'));
 //use staff route
 router.use('/staff', staffRoute);
 
