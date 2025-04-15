@@ -1,16 +1,16 @@
 #Localhost | Running on port 3000
 ##Local Deployment
 ##getAll Satff
-GET http://localhost:8080/satff
+GET http://localhost:8080/staff
 
 ###getAll Students
 GET http://localhost:8080/students      
 
 ### getStaff by id
-GET http://localhost:8080/staff
+GET http://localhost:8080/staff/67fe593d2dec3040b109f782
 
-### getSingle expenses data by id
-GET http://localhost:8080/expenses/67e26707b7b42a4fd52c76e5
+### get student by id
+GET http://localhost:8080/students/67fe593d2dec3040b109f782
 
 ### Add employee info 
 POST http://localhost:8080/staff HTTP/1.1

@@ -1,6 +1,6 @@
 const validator = require('../helpers/validator');
 
-const addStaff = (req, res, next) => {
+const addStaffInfo = (req, res, next) => {
   const validationRule = {
     "firstName": "required|string",
     "lastName": "required|string",
@@ -55,5 +55,5 @@ const updateStaffInfo = (req, res, next) => {
 };
 
 module.exports = {
-  addStaff, updateStaffInfo
+  addStaffInfo, updateStaffInfo
 };

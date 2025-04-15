@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const staffRoute = require('./staff')
-const studentsRoute = require('./staff')
+const studentsRoute = require('./student')
 
 router.use('/', require('./swagger'));
 

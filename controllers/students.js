@@ -5,7 +5,7 @@ const ObjectId = require("mongodb").ObjectId
 const getAllStudent = async(req, res) => {
      //#swagger tags =['staff']
     const result = await mongodb.getDatabase().db().collection("students").find();
-    result.toArray().then((contacts) => {
+    result.toArray().then((students) => {
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(students);
     });
@@ -53,7 +53,7 @@ const addStudent = async (req, res) => {
 };
 
 //Update student Info
-const updateStudentInfo = async (req, res) => {
+const updateStudentById = async (req, res) => {
      //#swagger tags =['staff']
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid id to update student Info.');
@@ -83,7 +83,7 @@ const updateStudentInfo = async (req, res) => {
 };
 
 //Delete student Info
-const deleteStudentInfo = async (req, res) => {
+const deleteStudentById = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid id to delete student.');
   }
@@ -99,4 +99,4 @@ const deleteStudentInfo = async (req, res) => {
 };
 
 
-module.exports = {getAllStudent, getStudentById, addStudent, updateStudentInfo, deleteStudentInfo};
+module.exports = {getAllStudent, getStudentById, addStudent, updateStudentById, deleteStudentById};
