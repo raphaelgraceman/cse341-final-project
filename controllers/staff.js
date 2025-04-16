@@ -103,6 +103,7 @@ const updateStaffById = async (req, res) => {
 
 //Delete delete staff Info
 const deleteStaffById = async (req, res) => {
+    //#swagger tags =['Staff']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid id to delete staff.');
   }

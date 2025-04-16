@@ -103,6 +103,7 @@ const updateStudentById = async (req, res) => {
 };
 //Delete student Info
 const deleteStudentById = async (req, res) => {
+    //#swagger tags =['Student']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid id to delete student.');
   }
