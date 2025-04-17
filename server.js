@@ -85,3 +85,5 @@ mongodb.initDb((err) => { // Call the initDb function created in connect of data
     }
 })
 
+// Exporting the app for testing
+module.exports = app;

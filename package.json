@@ -15,19 +15,23 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=5000",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
     "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2",
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
     "passport-github2": "^0.1.12",
+    "supertest": "^7.1.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1",
     "validatorjs": "^3.22.1"
@@ -38,6 +42,7 @@
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.2.6",
+    "jest": "^29.7.0",
     "prettier": "^3.5.3"
   }
 }
